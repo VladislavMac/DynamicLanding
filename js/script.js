@@ -123,4 +123,4 @@ function quotes(weather){
     setTimeout(quotes, 60000);
 }
 quotes()
-console.log('Music for it https://www.youtube.com/watch?v=tlUcmD0zPI4&ab_channel=MusicLab')
+console.log('Music for it https://www.youtube.com/watch?v=zPNi78sVbio&ab_channel=MusicLab')
