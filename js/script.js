@@ -98,11 +98,11 @@ function showDate(){
     //     content.style.backgroundImage = 'url(img/morning.jpg)'
     // }
 
-    if( hour < 12 && hour > 5){
+    if( hour < 12 && hour >= 5 ){
         content.style.backgroundImage = 'url(img/morning.jpg)'
-    }else if( hour < 18 ){
+    }else if( hour < 18 && hour >= 12 ){
         content.style.backgroundImage = 'url(img/day.jpg)';
-    }else if( hour < 22 ){
+    }else if( hour < 22 && hour >= 18 ){
         content.style.backgroundImage = 'url(img/evening.jpg)';
     }else{
         content.style.backgroundImage = 'url(img/night.jpg)'
