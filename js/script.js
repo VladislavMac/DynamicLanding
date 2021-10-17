@@ -34,7 +34,7 @@ const allQuotes = [
                     'Стремитесь быть не просто успешным человеком, а ценным. Альберт Эйнштейн',
                     'Одна победа не ведет к успеху, в отличие от постоянного желания побеждать. Винс Ломбарди',
                     'Осуществляйте свои мечты, или кто-то наймет вас для осуществления своих. Фарра Грей',
-                    'Рассчитывайте на худшее, надейся на лучшее. Владислав Макущенко',
+                    'Рассчитывайте на худшее, надейтесь на лучшее. Владислав Макущенко',
                     'Свой успех я объясняю вот тем, что я никогда не оправдывалась и не слушала оправданий. Флоренс Найтингейл',
                     'Успех — это движение от неудачи к неудаче без потери энтузиазма. Уинстон Черчилль',
                     'Успех - это лестница, на нее не взобраться, держа руки в карманах. Пауль Баует',
@@ -70,6 +70,8 @@ const allQuotes = [
 
                   ]
 
+let countWeather = 'day'
+
 function showDate(){
     const today = new Date();
      let hour = today.getHours();
@@ -83,22 +85,33 @@ function showDate(){
     // Time
     time.innerHTML = `${trueHour}<span>:</span>${trueMin}<span>:</span>${trueSec}`
 
-    if( hour >= 10 && hour < 18 ){ 
+    // if( hour >= 10 && hour < 18 ){ 
+    //     content.style.backgroundImage = 'url(img/day.jpg)';
+    // }
+    // if( hour >= 18 && hour < 23 ){
+    //     content.style.backgroundImage = 'url(img/evening.jpg)';
+    // }
+    // if( hour >= 23 && hour < 5 ){
+    //     content.style.backgroundImage = 'url(img/night.jpg)'
+    // }
+    // if( hour >= 5 && hour < 10 ){
+    //     content.style.backgroundImage = 'url(img/morning.jpg)'
+    // }
+
+    if( hour < 12 && hour > 5){
+        content.style.backgroundImage = 'url(img/morning.jpg)'
+    }else if( hour < 18 ){
         content.style.backgroundImage = 'url(img/day.jpg)';
-    }
-    if( hour >= 18 && hour < 23 ){
+    }else if( hour < 22 ){
         content.style.backgroundImage = 'url(img/evening.jpg)';
-    }
-    if( hour >= 23 && hour < 5 ){
+    }else{
         content.style.backgroundImage = 'url(img/night.jpg)'
     }
-    if( hour >= 5 && hour < 10 ){
-        content.style.backgroundImage = 'url(img/morning.jpg)'
-    }
 
-    setTimeout(showDate, 1000);
 } 
-showDate();
+setInterval(() => {
+    showDate()
+}, 1000);
 
 function quotes(weather){
     desc.style.color = 'transparent';
