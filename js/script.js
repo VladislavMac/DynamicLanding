@@ -102,11 +102,10 @@ showDate();
 
 function quotes(weather){
     desc.style.color = 'transparent';
-    desc.style.textShadow = 'none';
     setTimeout(() =>{
         desc.innerHTML = allQuotes[Math.floor(Math.random() * allQuotes.length)];
         desc.style.color = 'white'
-        desc.style.textShadow = 'rgba(0, 0, 0, 0.301) 6px 5px 30px;';
+        desc.style.textShadow = '#000 6px 5px 30px;';
     },1000)
     setTimeout(quotes, 60000);
 }
