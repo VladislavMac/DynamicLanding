@@ -83,16 +83,16 @@ function showDate(){
     // Time
     time.innerHTML = `${trueHour}<span>:</span>${trueMin}<span>:</span>${trueSec}`
 
-    if( hour > 10 && hour < 18 ){ 
+    if( hour >= 10 && hour < 18 ){ 
         content.style.backgroundImage = 'url(img/day.jpg)';
     }
-    if( hour > 18 && hour < 23 ){
+    if( hour >= 18 && hour < 23 ){
         content.style.backgroundImage = 'url(img/evening.jpg)';
     }
-    if( hour > 23 && hour < 5 ){
+    if( hour >= 23 && hour < 5 ){
         content.style.backgroundImage = 'url(img/night.jpg)'
     }
-    if( hour > 5 && hour < 10 ){
+    if( hour >= 5 && hour < 10 ){
         content.style.backgroundImage = 'url(img/morning.jpg)'
     }
 
