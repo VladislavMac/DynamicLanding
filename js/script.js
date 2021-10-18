@@ -121,7 +121,7 @@ setInterval(() => {
 }, 1000);
 
 function ifPhoneErr(){
-    if( window.innerWidth < 887 && window.innerHeight > 480 || window.innerWidth < 714 && window.innerHeight < 714){
+    if( window.innerWidth < 700 && window.innerHeight > 800 || window.innerWidth < 700 && window.innerHeight < 800){
         time.style.display = 'none';
         desc.innerHTML = errorPhoneRu
     }else{
