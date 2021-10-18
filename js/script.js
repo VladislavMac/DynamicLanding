@@ -112,7 +112,7 @@ function showDate(){
         content.style.backgroundImage = 'url(img/evening_3.jpg)';
     }
     else{
-        content.style.backgroundImage = 'url(img/night_2.jpg)'
+        content.style.backgroundImage = 'url(img/night_3.jpg)'
     }
 
 } 
