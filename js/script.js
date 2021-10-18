@@ -4,6 +4,7 @@ const content = document.querySelector('.content');
 const time    = document.querySelector('.time');
 const desc    = document.querySelector('.desc');
 
+
 const allQuotes = [
                     'Дойдя до конца, люди смеются над страхами, мучившими их вначале. Пауло Коэльо',
                     'Если ты не знаешь, чего хочешь, ты в итоге останешься с тем, чего точно не хочешь. Чак Паланик',
@@ -120,7 +121,7 @@ setInterval(() => {
 }, 1000);
 
 function ifPhoneErr(){
-    if( window.innerWidth < 887 ){
+    if( window.innerWidth < 887 && window.innerHeight > 480 || window.innerWidth < 714 && window.innerHeight < 714){
         time.style.display = 'none';
         desc.innerHTML = errorPhoneRu
     }else{
