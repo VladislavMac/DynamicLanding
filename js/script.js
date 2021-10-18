@@ -98,14 +98,29 @@ function showDate(){
     //     content.style.backgroundImage = 'url(img/morning.jpg)'
     // }
 
-    if( hour < 12 && hour >= 5 ){
-        content.style.backgroundImage = 'url(img/morning.jpg)'
-    }else if( hour < 18 && hour >= 12 ){
-        content.style.backgroundImage = 'url(img/day.jpg)';
-    }else if( hour < 22 && hour >= 18 ){
-        content.style.backgroundImage = 'url(img/evening.jpg)';
-    }else{
-        content.style.backgroundImage = 'url(img/night.jpg)'
+    if( hour < 7 && hour >= 5 ){
+        content.style.backgroundImage = 'url(img/morning_3.jpg)'
+    }else if( hour < 9 && hour >= 7 ){
+        content.style.backgroundImage = 'url(img/morning_2.jpg)'
+    }else if( hour < 12 && hour >= 9 ){
+        content.style.backgroundImage = 'url(img/morning_1.jpg)'
+    }
+    else if( hour < 14 && hour >= 12 ){
+        content.style.backgroundImage = 'url(img/day_3.jpg)';
+    }else if( hour < 16 && hour >= 14 ){
+        content.style.backgroundImage = 'url(img/day_2.jpg)';
+    }else if( hour < 18 && hour >= 16 ){
+        content.style.backgroundImage = 'url(img/day_1.jpg)';
+    }
+    else if( hour < 20 && hour >= 18 ){
+        content.style.backgroundImage = 'url(img/evening_1.jpg)';
+    }else if( hour < 22 && hour >= 20 ){
+        content.style.backgroundImage = 'url(img/evening_2.jpg)';
+    }else if( hour < 23 && hour >= 22 ){
+        content.style.backgroundImage = 'url(img/evening_3.jpg)';
+    }
+    else{
+        content.style.backgroundImage = 'url(img/night_2.jpg)'
     }
 
 } 
