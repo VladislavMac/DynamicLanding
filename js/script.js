@@ -106,9 +106,9 @@ function showDate(){
     }
     else if( hour < 20 && hour >= 18 ){
         content.style.backgroundImage = 'url(img/evening_1.jpg)';
-    }else if( hour < 22 && hour >= 20 ){
+    }else if( hour < 21 && hour >= 20 ){
         content.style.backgroundImage = 'url(img/evening_2.jpg)';
-    }else if( hour < 23 && hour >= 22 ){
+    }else if( hour < 23 && hour >= 21 ){
         content.style.backgroundImage = 'url(img/evening_3.jpg)';
     }
     else{
