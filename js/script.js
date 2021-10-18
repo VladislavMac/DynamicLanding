@@ -70,7 +70,9 @@ const allQuotes = [
 
                   ]
 
-let countWeather = 'day'
+let countWeather   = 'day'
+const errorPhoneRu = 'Пожалуйста переверните ваше устройство';
+const errorPhoneEn = ''
 
 function showDate(){
     const today = new Date();
@@ -85,18 +87,7 @@ function showDate(){
     // Time
     time.innerHTML = `${trueHour}<span>:</span>${trueMin}<span>:</span>${trueSec}`
 
-    // if( hour >= 10 && hour < 18 ){ 
-    //     content.style.backgroundImage = 'url(img/day.jpg)';
-    // }
-    // if( hour >= 18 && hour < 23 ){
-    //     content.style.backgroundImage = 'url(img/evening.jpg)';
-    // }
-    // if( hour >= 23 && hour < 5 ){
-    //     content.style.backgroundImage = 'url(img/night.jpg)'
-    // }
-    // if( hour >= 5 && hour < 10 ){
-    //     content.style.backgroundImage = 'url(img/morning.jpg)'
-    // }
+    ifPhoneErr();
 
     if( hour < 7 && hour >= 5 ){
         content.style.backgroundImage = 'url(img/morning_3.jpg)'
@@ -127,6 +118,18 @@ function showDate(){
 setInterval(() => {
     showDate()
 }, 1000);
+
+function ifPhoneErr(){
+    if( window.innerWidth < 887 ){
+        time.style.display = 'none';
+        desc.innerHTML = errorPhoneRu
+    }else{
+        time.style.display = 'block';
+        if( desc.textContent == errorPhoneRu ){
+            desc.innerHTML = allQuotes[Math.floor(Math.random() * allQuotes.length)];
+        }
+    }
+}
 
 function quotes(weather){
     desc.style.color = 'transparent';
