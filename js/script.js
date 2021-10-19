@@ -7,6 +7,7 @@ const hideMail    = document.querySelector('.header-help span');
 const header      = document.querySelector('header');
 const contentDesc = document.querySelector('.content-desc')
 const author      = document.querySelector('.author');
+const headHelp    = document.querySelector('.header-help');
 
 const allQuotes = {
                     'Дойдя до конца, люди смеются над страхами, мучившими их вначале.' : 
