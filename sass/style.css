@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -9,6 +10,11 @@
 body {
   background: #222222;
   font-family: 'Quicksand', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .content {
@@ -54,5 +60,28 @@ body {
   margin-right: auto;
   max-width: 1000px;
   padding-top: 10px;
+}
+
+.header {
+  display: block;
+  text-shadow: #000 6px 5px 5px;
+  position: absolute;
+  font-size: 10px;
+  top: 0;
+  width: 100%;
+  height: 80px;
+}
+
+.header-help span:hover {
+  cursor: pointer;
+}
+
+.content-author {
+  padding-top: 5px;
+}
+
+.author {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
