@@ -200,7 +200,7 @@ let countWeather   = 'day'
 // const errorPhoneEn = ''
 
 hideMail.onclick = function clickHideSpan(){
-    header.style.display = 'none';
+    headHelp.style.display = 'none';
 }
 
 function showDate(){
