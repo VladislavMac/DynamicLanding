@@ -43,6 +43,7 @@ a {
 }
 
 .wrapper time {
+  text-shadow: #000 2px 3px 40px;
   font-size: 100px;
 }
 
