@@ -43,7 +43,7 @@ a {
 }
 
 .wrapper time {
-  text-shadow: #000 2px 3px 40px;
+  text-shadow: #000 2px 3px 150px;
   font-size: 100px;
 }
 
@@ -55,7 +55,7 @@ a {
   -webkit-transition-duration: 2s;
           transition-duration: 2s;
   font-size: 30px;
-  text-shadow: #000 6px 5px 30px;
+  text-shadow: #000 6px 5px 20px;
 }
 
 .wrapper .content-desc {
