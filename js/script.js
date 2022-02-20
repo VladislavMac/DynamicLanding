@@ -211,14 +211,14 @@ function getDate(){
     const trueHour = hour < 10 ? '0' + hour : hour;
 
     showDate(trueHour, trueMin, trueSec)
-    getImage(hour)
+    setImage(hour)
 
     setTimeout(()=>{
         getDate();
     }, 1000)
 } 
 
-function getImage(hour){
+function setImage(hour){
     if( hour < 7 && hour >= 5 ){
         getBackground('morning_3.jpg')
     }else if( hour < 9 && hour >= 7 ){
