@@ -1,13 +1,13 @@
 "use strict"
 
-const content     = document.querySelector('.content');
-const time        = document.querySelector('.time');
-const desc        = document.querySelector('.desc');
-const hideMail    = document.querySelector('.header-help span');
-const header      = document.querySelector('header');
-const contentDesc = document.querySelector('.content-desc')
-const author      = document.querySelector('.author');
-const headHelp    = document.querySelector('.header-help');
+const content     = document.querySelector('.content'),
+      time        = document.querySelector('.time'),
+      desc        = document.querySelector('.desc'),
+      hideMail    = document.querySelector('.header-help span'),
+      header      = document.querySelector('header'),
+      contentDesc = document.querySelector('.content-desc'),
+      author      = document.querySelector('.author'),
+      headHelp    = document.querySelector('.header-help');
 
 const allQuotes = {
                     'Дойдя до конца, люди смеются над страхами, мучившими их вначале.' : 
@@ -195,15 +195,12 @@ const allQuotes = {
 
                     }
 
-let countWeather   = 'day'
-// const errorPhoneRu = 'Пожалуйста переверните ваше устройство';
-// const errorPhoneEn = ''
 
-hideMail.onclick = function clickHideSpan(){
-    headHelp.style.display = 'none';
-}
+// hideMail.onclick = function clickHideSpan(){
+//     headHelp.style.display = 'none';
+// }
 
-function showDate(){
+function getDate(){
     const today = new Date();
      let hour = today.getHours();
      let min  = today.getMinutes();
@@ -213,69 +210,75 @@ function showDate(){
     const trueMin  = min < 10 ? '0' + min : min;
     const trueHour = hour < 10 ? '0' + hour : hour;
 
-    // Time
-    time.innerHTML = `${trueHour}<span>:</span>${trueMin}<span>:</span>${trueSec}`
+    showDate(trueHour, trueMin, trueSec)
+    getImage(hour)
 
-    // ifPhoneErr();
+    setTimeout(()=>{
+        getDate();
+    }, 1000)
+} 
 
+function getImage(hour){
     if( hour < 7 && hour >= 5 ){
-        content.style.backgroundImage = 'url(img/morning_3.jpg)'
+        getBackground('morning_3.jpg')
     }else if( hour < 9 && hour >= 7 ){
-        content.style.backgroundImage = 'url(img/morning_2.jpg)'
+        getBackground('morning_2.jpg')
     }else if( hour < 12 && hour >= 9 ){
-        content.style.backgroundImage = 'url(img/morning_1.jpg)'
+        getBackground('morning_1.jpg')
     }
     else if( hour < 14 && hour >= 12 ){
-        content.style.backgroundImage = 'url(img/day_3.jpg)';
+        getBackground('day_3.jpg')
     }else if( hour < 16 && hour >= 14 ){
-        content.style.backgroundImage = 'url(img/day_2.jpg)';
+        getBackground('day_2.jpg')
     }else if( hour < 18 && hour >= 16 ){
-        content.style.backgroundImage = 'url(img/day_1.jpg)';
+        getBackground('day_1.jpg')
     }
     else if( hour < 20 && hour >= 18 ){
-        content.style.backgroundImage = 'url(img/evening_1.jpg)';
+        getBackground('evening_1.jpg')
     }else if( hour < 21 && hour >= 20 ){
-        content.style.backgroundImage = 'url(img/evening_2.jpg)';
+        getBackground('evening_2.jpg')
     }else if( hour < 23 && hour >= 21 ){
-        content.style.backgroundImage = 'url(img/evening_3.jpg)';
+        getBackground('evening_3.jpg')
     }
     else{
-        content.style.backgroundImage = 'url(img/night_3.jpg)'
+        getBackground('night_3.jpg')
     }
+}
 
-} 
-setInterval(() => {
-    showDate()
-}, 1000);
+function getBackground(url){
+    return content.style.backgroundImage = `url(img/${url})`
+}
 
-// function ifPhoneErr(){
-//     if( window.innerWidth < 700 && window.innerHeight > 800 || window.innerWidth < 700 && window.innerHeight < 800 || window.innerWidth < 500 && window.innerHeight > 350){
-//         time.style.display = 'none';
-//         desc.innerHTML = errorPhoneRu
-//     }else{
-//         time.style.display = 'block';
-//         if( desc.textContent == errorPhoneRu ){
-//             desc.innerHTML = allQuotes[Math.floor(Math.random() * allQuotes.length)];
-//         }
-//     }
-// }
+function showDate(hour, min, sec){
+    time.innerHTML = `${hour}<span>:</span>${min}<span>:</span>${sec}`
+}
 
-function quotes(weather){
-    var keys = Object.keys(allQuotes);
-
+function quotes(){
     contentDesc.style.color = 'transparent';
     author.style.color = 'transparent';
-
-    setTimeout(() =>{
-        desc.innerHTML = keys[Math.floor(keys.length * Math.random())]
-        author.innerHTML =`${allQuotes[desc.innerText]}`;
-
-        contentDesc.style.color = 'white';
-        author.style.color = 'white';
-
-        desc.style.textShadow = '#000 6px 5px 30px;';
+    
+    setTimeout(()=>{
+        newQuotes()
     },1000)
-    setTimeout(quotes, 60000);
+
 }
-quotes()
+
+function newQuotes(){
+    var keys = Object.keys(allQuotes);
+
+    desc.innerHTML = keys[Math.floor(keys.length * Math.random())]
+    author.innerHTML =`${allQuotes[desc.innerText]}`;
+
+    contentDesc.style.color = 'white';
+    author.style.color = 'white';
+
+    setTimeout(()=>{
+        quotes()
+    }, 10000)
+}
+
+
+getDate()
+newQuotes()
+
 console.log('Music for it https://www.youtube.com/watch?v=zPNi78sVbio&ab_channel=MusicLab')
