@@ -274,7 +274,7 @@ function newQuotes(){
 
     setTimeout(()=>{
         quotes()
-    }, 60000)
+    }, 600000)
 }
 
 
